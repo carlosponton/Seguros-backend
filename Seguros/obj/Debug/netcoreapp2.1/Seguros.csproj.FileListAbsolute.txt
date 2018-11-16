@@ -1,0 +1,14 @@
+C:\Users\CERCAM-PC\Desktop\Prueba\Seguros\Seguros\bin\Debug\netcoreapp2.1\Seguros.deps.json
+C:\Users\CERCAM-PC\Desktop\Prueba\Seguros\Seguros\bin\Debug\netcoreapp2.1\Seguros.runtimeconfig.json
+C:\Users\CERCAM-PC\Desktop\Prueba\Seguros\Seguros\bin\Debug\netcoreapp2.1\Seguros.runtimeconfig.dev.json
+C:\Users\CERCAM-PC\Desktop\Prueba\Seguros\Seguros\bin\Debug\netcoreapp2.1\Seguros.dll
+C:\Users\CERCAM-PC\Desktop\Prueba\Seguros\Seguros\obj\Debug\netcoreapp2.1\Seguros.csproj.CoreCompileInputs.cache
+C:\Users\CERCAM-PC\Desktop\Prueba\Seguros\Seguros\obj\Debug\netcoreapp2.1\Seguros.RazorAssemblyInfo.cache
+C:\Users\CERCAM-PC\Desktop\Prueba\Seguros\Seguros\obj\Debug\netcoreapp2.1\Seguros.RazorAssemblyInfo.cs
+C:\Users\CERCAM-PC\Desktop\Prueba\Seguros\Seguros\obj\Debug\netcoreapp2.1\Seguros.AssemblyInfoInputs.cache
+C:\Users\CERCAM-PC\Desktop\Prueba\Seguros\Seguros\obj\Debug\netcoreapp2.1\Seguros.AssemblyInfo.cs
+C:\Users\CERCAM-PC\Desktop\Prueba\Seguros\Seguros\obj\Debug\netcoreapp2.1\Seguros.RazorTargetAssemblyInfo.cache
+C:\Users\CERCAM-PC\Desktop\Prueba\Seguros\Seguros\bin\Debug\netcoreapp2.1\Seguros.pdb
+C:\Users\CERCAM-PC\Desktop\Prueba\Seguros\Seguros\obj\Debug\netcoreapp2.1\Seguros.dll
+C:\Users\CERCAM-PC\Desktop\Prueba\Seguros\Seguros\obj\Debug\netcoreapp2.1\Seguros.pdb
+C:\Users\CERCAM-PC\Desktop\Prueba\Seguros\Seguros\obj\Debug\netcoreapp2.1\Seguros.csprojAssemblyReference.cache
