@@ -71,8 +71,8 @@ namespace Seguros.Models
 
             modelBuilder.Entity<Type>().HasData(
                 new Type() { Id = 1, Percentage = 10, Value = "Terremoto" },
-                new Type() { Id = 2, Percentage = 20, Value = "Incendio" },
-                new Type() { Id = 3, Percentage = 30, Value = "Pérdida" });
+                new Type() { Id = 2, Percentage = 50, Value = "Incendio" },
+                new Type() { Id = 3, Percentage = 80, Value = "Pérdida" });
 
             modelBuilder.Entity<Policy>(entity =>
             {

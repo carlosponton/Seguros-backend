@@ -118,6 +118,13 @@ namespace Seguros.Controllers
                 return BadRequest(ModelState);
             }
 
+            var type = db.Type.Find(policy.TypeId);
+
+            if(type.Percentage > 50 && policy.Danger == Danger.Alto)
+            {
+                return BadRequest(ModelState);
+            }
+
             db.Policy.Add(policy);
             await db.SaveChangesAsync();
 
