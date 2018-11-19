@@ -47,6 +47,7 @@ namespace Seguros.Migrations
                     Description = table.Column<string>(maxLength: 500, nullable: false),
                     Date = table.Column<DateTime>(maxLength: 300, nullable: false),
                     Period = table.Column<int>(maxLength: 300, nullable: false),
+                    Price = table.Column<double>(nullable: false),
                     Danger = table.Column<int>(maxLength: 300, nullable: false),
                     TypeId = table.Column<int>(maxLength: 300, nullable: false),
                     ClientId = table.Column<int>(maxLength: 300, nullable: false)
@@ -84,14 +85,14 @@ namespace Seguros.Migrations
                 values: new object[,]
                 {
                     { 1, 10.0, "Terremoto" },
-                    { 2, 20.0, "Incendio" },
-                    { 3, 30.0, "Pérdida" }
+                    { 2, 50.0, "Incendio" },
+                    { 3, 80.0, "Pérdida" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Policy",
-                columns: new[] { "Id", "ClientId", "Danger", "Date", "Description", "Name", "Period", "TypeId" },
-                values: new object[] { 1, 1, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Se está haciendo una prueba", "Prueba1", 12, 1 });
+                columns: new[] { "Id", "ClientId", "Danger", "Date", "Description", "Name", "Period", "Price", "TypeId" },
+                values: new object[] { 1, 1, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Se está haciendo una prueba", "Prueba1", 12, 1000.0, 1 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Policy_ClientId",

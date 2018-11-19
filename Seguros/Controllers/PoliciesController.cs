@@ -20,20 +20,22 @@ namespace Seguros.Controllers
         public IEnumerable<Policy> GetPolicy()
         {
             var query = (from p in db.Policy
-                        join c in db.Client on p.ClientId equals c.Id
-                        join t in db.Type on p.TypeId equals t.Id
-                        select new Policy {
-                            Id = p.Id,
-                            Description = p.Description,
-                            ClientId = p.ClientId,
-                            Danger = p.Danger,
-                            Date = p.Date,
-                            Name = p.Name,
-                            Period = p.Period,
-                            TypeId = p.TypeId,
-                            Client = c,
-                            Type = t
-                        });
+                         join c in db.Client on p.ClientId equals c.Id
+                         join t in db.Type on p.TypeId equals t.Id
+                         select new Policy
+                         {
+                             Id = p.Id,
+                             Description = p.Description,
+                             ClientId = p.ClientId,
+                             Danger = p.Danger,
+                             Date = p.Date,
+                             Name = p.Name,
+                             Period = p.Period,
+                             TypeId = p.TypeId,
+                             Price = p.Price,
+                             Client = c,
+                             Type = t
+                         });
             return query;
         }
 
@@ -60,6 +62,7 @@ namespace Seguros.Controllers
                              Danger = p.Danger,
                              Date = p.Date,
                              Name = p.Name,
+                             Price = p.Price,
                              Period = p.Period,
                              TypeId = p.TypeId,
                              Client = c,
@@ -78,9 +81,12 @@ namespace Seguros.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPolicy([FromRoute] int id, [FromBody] Policy policy)
         {
-            if (!ModelState.IsValid)
+
+            var type = db.Type.Find(policy.TypeId);
+
+            if (type.Percentage > 50 && policy.Danger == Danger.Alto)
             {
-                return BadRequest(ModelState);
+                return BadRequest();
             }
 
             if (id != policy.Id)
@@ -111,18 +117,14 @@ namespace Seguros.Controllers
 
         // POST: api/Policies
         [HttpPost]
-        public async Task<IActionResult> PostPolicy([FromBody] Policy policy)
+        public async Task<IActionResult> PostPolicy(Policy policy)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             var type = db.Type.Find(policy.TypeId);
+            System.Diagnostics.Debug.WriteLine(type);
 
-            if(type.Percentage > 50 && policy.Danger == Danger.Alto)
+            if (type.Percentage > 50 && policy.Danger == Danger.Alto)
             {
-                return BadRequest(ModelState);
+                return BadRequest();
             }
 
             db.Policy.Add(policy);
@@ -135,10 +137,6 @@ namespace Seguros.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePolicy([FromRoute] int id)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
 
             var policy = await db.Policy.FindAsync(id);
             if (policy == null)

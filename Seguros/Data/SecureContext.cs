@@ -116,6 +116,7 @@ namespace Seguros.Models
                     Description = "Se está haciendo una prueba",
                     Period = 12,
                     TypeId = 1,
+                    Price = 1000,
                     Date = new DateTime()
                 });
 

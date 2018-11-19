@@ -22,6 +22,7 @@ namespace Seguros.Models
         public string Description { get; set; }
         public DateTime Date { get; set; }
         public int Period { get; set; }
+        public double Price { get; set; }
         public Danger Danger { get; set; }
 
         public int TypeId { get; set; }

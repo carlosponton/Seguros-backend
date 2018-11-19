@@ -10,7 +10,7 @@ using Seguros.Models;
 namespace Seguros.Migrations
 {
     [DbContext(typeof(SecureContext))]
-    [Migration("20181116044409_InitialCreate")]
+    [Migration("20181118183317_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -76,6 +76,8 @@ namespace Seguros.Migrations
                     b.Property<int>("Period")
                         .HasMaxLength(300);
 
+                    b.Property<double>("Price");
+
                     b.Property<int>("TypeId")
                         .HasMaxLength(300);
 
@@ -88,7 +90,7 @@ namespace Seguros.Migrations
                     b.ToTable("Policy");
 
                     b.HasData(
-                        new { Id = 1, ClientId = 1, Danger = 3, Date = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), Description = "Se está haciendo una prueba", Name = "Prueba1", Period = 12, TypeId = 1 }
+                        new { Id = 1, ClientId = 1, Danger = 3, Date = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), Description = "Se está haciendo una prueba", Name = "Prueba1", Period = 12, Price = 1000.0, TypeId = 1 }
                     );
                 });
 
@@ -111,8 +113,8 @@ namespace Seguros.Migrations
 
                     b.HasData(
                         new { Id = 1, Percentage = 10.0, Value = "Terremoto" },
-                        new { Id = 2, Percentage = 20.0, Value = "Incendio" },
-                        new { Id = 3, Percentage = 30.0, Value = "Pérdida" }
+                        new { Id = 2, Percentage = 50.0, Value = "Incendio" },
+                        new { Id = 3, Percentage = 80.0, Value = "Pérdida" }
                     );
                 });
 
